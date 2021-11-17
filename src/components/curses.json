@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "title": "aleksatdr test course",
+    "autor": "ivanov ivan",
+    "priority": "high priority",
+    "active": false,
+    "partnership": false,
+    "rewiew": false,
+    "module": [
+      { "title": "new module", "status": "in progress" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "new module", "status": "complete" },
+      { "title": "new module", "status": "complete" }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Aleksatdr test",
+    "module": [
+      { "title": "new module", "status": "in progress" },
+      { "title": "new module", "status": "in progress" },
+      { "title": "new module", "status": "in progress" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "new module", "status": "complete" },
+      { "title": "new module", "status": "complete" }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Aleksatdr",
+    "module": [
+      { "title": "new module", "status": "in progress" },
+      { "title": "new module", "status": "in progress" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "submitted" },
+      { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "new module", "status": "complete" },
+      { "title": "new module", "status": "complete" }
+    ]
+  }
+]
