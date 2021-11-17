@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const SectionStyled = styled.section`
-  padding: 100px 50px 100px 50px;
+  /* height: calc(100vh - 200px); */
+  padding: 50px;
 `;
 
 export default SectionStyled;

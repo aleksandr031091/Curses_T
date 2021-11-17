@@ -9,7 +9,6 @@ const InProgress = ({ module }) => {
         {arr.map((el) => (
           <li className="module_list_item" key={nanoid()}>
             <p className="module_name">{el.title}</p>
-            {/* <p>{el.status}</p> */}
           </li>
         ))}
       </ul>

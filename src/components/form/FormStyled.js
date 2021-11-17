@@ -3,7 +3,13 @@ import styled from "styled-components";
 const FormStyled = styled.form`
   display: flex;
   justify-content: space-between;
-  padding: 10px 10px 10px 0;
+  align-items: center;
+  padding: 10px;
+  background-color: #b196cc;
+
+  .total_wrapper {
+    display: flex;
+  }
 `;
 
 export default FormStyled;

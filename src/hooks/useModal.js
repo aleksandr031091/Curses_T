@@ -3,8 +3,7 @@ import { useState } from "react";
 const useModal = () => {
   const [stateModal, setOptionModal] = useState(false);
 
-  const setStateModal = () =>
-    setOptionModal((prev) => ({ ...prev, isModalOpen: !prev.isModalOpen }));
+  const setStateModal = () => setOptionModal(!stateModal);
 
   return [stateModal, setStateModal];
 };
