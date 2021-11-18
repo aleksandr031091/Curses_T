@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
-import DashboardStyled from "./DashboardStyled";
 import curses from "../curses.json";
-import InProgress from "./inProgress/InProgress";
-import Submitted from "./submitted/Submitted";
-import Riwiew from "./riwiew/Riwiew";
-import Modal from "../modal/Modal";
-import useModal from "../../hooks/useModal";
+import { useEffect, useState } from "react";
+// import InProgress from "./inProgress/InProgress";
+// import Submitted from "./submitted/Submitted";
+// import Riwiew from "./riwiew/Riwiew";
+// import Modal from "../modal/Modal";
 import Form from "../form/Form";
 
+// import useModal from "../../hooks/useModal";
+import DashboardStyled from "./DashboardStyled";
+import ContentBoard from "./dashboard_content/ContentBoard";
+
 const Deshboard = () => {
-  const [isOpenModal, setOpenModal] = useModal();
   const [search, setSearch] = useState("");
   const [searcTermhResult, setSearcTermhResult] = useState([]);
 
@@ -19,114 +20,43 @@ const Deshboard = () => {
 
   const onHandleSearch = (value) => {
     setSearch(value);
+
     if (value !== "") {
-      const newCurserList = curses.filter((curse) =>
-        curse.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+      // const newCurserList = curses.reduce((acc, curses) => {
+      //   curses.title.toLowerCase().includes(value.toLowerCase()) &&
+      //     acc.push(curses);
+
+      //   if (acc.length === 0) {
+      //     curses.module.forEach((m) => {
+      //       if (m.title.toLowerCase().includes(value.toLowerCase())) {
+      //         // console.log(m.title);
+      //         const obj = JSON.parse(JSON.stringify(curses));
+      //         obj.module.filter((el) => el.title === m.title);
+      //         console.log(obj);
+      //         acc.push();
+      //       }
+      //     });
+      //   }
+      //   // console.log(acc);
+      //   return acc;
+      // }, []);
+      const newArrCurses = curses.filter(
+        (curse) =>
+          curse.title.toLowerCase().includes(value.toLowerCase()) ||
+          curse.module.some(({ title }) =>
+            title.toLowerCase().includes(value.toLowerCase())
+          )
       );
-
-      setSearcTermhResult(newCurserList);
+      setSearcTermhResult(newArrCurses);
+    } else {
+      setSearcTermhResult(curses);
     }
-  };
-
-  const onHandleClick = (e) => {
-    // console.log(e.target);
-    setOpenModal();
   };
 
   return (
     <DashboardStyled>
       <Form term={search} searchKeyword={onHandleSearch} />
-      <div className="cpntent_wrapper">
-        <div className="block_wrapper">
-          <div className="block_curses">
-            <h2 className="block_title">In progress</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li
-                  key={curse.id}
-                  className="curses_card"
-                  onClick={onHandleClick}
-                >
-                  <p className="curse_title">{curse.title}</p>
-                  {curse.module}
-                  {/* <InProgress module={curse.module} /> */}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Submitted</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
-                  <Submitted module={curse.module} />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
-                  <Riwiew module={curse.module} />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
-                  <Riwiew module={curse.module} />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
-                  <Riwiew module={curse.module} />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
-                  <Riwiew module={curse.module} />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        {isOpenModal && (
-          <Modal handleCloseModal={setOpenModal}>
-            <p>Good</p>
-          </Modal>
-        )}
-      </div>
+      <ContentBoard searcTermhResult={searcTermhResult} />
     </DashboardStyled>
   );
 };

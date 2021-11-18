@@ -53,7 +53,7 @@
     "id": "4",
     "title": "Aleksatdr",
     "module": [
-      { "title": "new module", "status": "in progress" },
+      { "title": "new", "status": "in progress" },
       { "title": "new module", "status": "in progress" },
       { "title": "new module", "status": "submitted" },
       { "title": "new module", "status": "submitted" },
@@ -69,16 +69,16 @@
     "id": "5",
     "title": "Aleksatdr",
     "module": [
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "complete" },
-      { "title": "new module", "status": "complete" }
+      { "title": "ppp", "status": "in progress" },
+      { "title": "ppp", "status": "in progress" },
+      { "title": "n", "status": "submitted" },
+      { "title": "ppp", "status": "submitted" },
+      { "title": "ppp", "status": "submitted" },
+      { "title": "ppp", "status": "ready to submit to peer review" },
+      { "title": "ppp", "status": "ready to submit to peer review" },
+      { "title": "ppp", "status": "ready to submit to peer review" },
+      { "title": "ppp", "status": "complete" },
+      { "title": "pppp", "status": "complete" }
     ]
   }
 ]
