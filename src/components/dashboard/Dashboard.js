@@ -1,16 +1,21 @@
 import curses from "../curses.json";
 import { useEffect, useState } from "react";
-// import InProgress from "./inProgress/InProgress";
-// import Submitted from "./submitted/Submitted";
-// import Riwiew from "./riwiew/Riwiew";
-// import Modal from "../modal/Modal";
+import Modal from "../modal/Modal";
 import Form from "../form/Form";
 
-// import useModal from "../../hooks/useModal";
+import useModal from "../../hooks/useModal";
 import DashboardStyled from "./DashboardStyled";
-import ContentBoard from "./dashboard_content/ContentBoard";
+
+import CurseModules from "./curse_modules/CurseModules";
 
 const Deshboard = () => {
+  const [isOpenModal, setOpenModal] = useModal();
+
+  const onHandleClick = (e) => {
+    console.log(e.target);
+    setOpenModal();
+  };
+
   const [search, setSearch] = useState("");
   const [searcTermhResult, setSearcTermhResult] = useState([]);
 
@@ -56,7 +61,122 @@ const Deshboard = () => {
   return (
     <DashboardStyled>
       <Form term={search} searchKeyword={onHandleSearch} />
-      <ContentBoard searcTermhResult={searcTermhResult} />
+
+      <div className="content_board">
+        <div className="block_wrapper">
+          <div className="block_curses">
+            <h2 className="block_title">In progress</h2>
+
+            <ul className="block_list">
+              {searcTermhResult.map((curse) => (
+                <li
+                  key={curse.id}
+                  className="curses_card"
+                  onClick={onHandleClick}
+                >
+                  <p className="curse_title">{curse.title}</p>
+                  <CurseModules modules={curse.module} status="in progress" />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="block_curses">
+            <h2 className="block_title">Submitted</h2>
+
+            <ul className="block_list">
+              {searcTermhResult.map((curse) => (
+                <li key={curse.id} className="curses_card">
+                  <p className="curse_title">{curse.title}</p>
+                  <CurseModules modules={curse.module} status="submitted" />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="block_curses">
+            <h2 className="block_title">Submitted</h2>
+
+            <ul className="block_list">
+              {searcTermhResult.map((curse) => (
+                <li key={curse.id} className="curses_card">
+                  <p className="curse_title">{curse.title}</p>
+                  <CurseModules modules={curse.module} status="submitted" />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="block_curses">
+            <h2 className="block_title">Ready to submit to peer review</h2>
+
+            <ul className="block_list">
+              {searcTermhResult.map((curse) => (
+                <li key={curse.id} className="curses_card">
+                  <p className="curse_title">{curse.title}</p>
+                  <CurseModules
+                    modules={curse.module}
+                    status="ready to submit to peer review"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="block_curses">
+            <h2 className="block_title">Ready to submit to peer review</h2>
+
+            <ul className="block_list">
+              {searcTermhResult.map((curse) => (
+                <li key={curse.id} className="curses_card">
+                  <p className="curse_title">{curse.title}</p>
+                  <CurseModules
+                    modules={curse.module}
+                    status="ready to submit to peer review"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="block_curses">
+            <h2 className="block_title">Ready to submit to peer review</h2>
+
+            <ul className="block_list">
+              {searcTermhResult.map((curse) => (
+                <li key={curse.id} className="curses_card">
+                  <p className="curse_title">{curse.title}</p>
+                  <CurseModules
+                    modules={curse.module}
+                    status="ready to submit to peer review"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="block_curses">
+            <h2 className="block_title">Ready to submit to peer review</h2>
+
+            <ul className="block_list">
+              {searcTermhResult.map((curse) => (
+                <li key={curse.id} className="curses_card">
+                  <p className="curse_title">{curse.title}</p>
+                  <CurseModules
+                    modules={curse.module}
+                    status="ready to submit to peer review"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        {isOpenModal && (
+          <Modal handleCloseModal={setOpenModal}>
+            <p>Good</p>
+          </Modal>
+        )}
+      </div>
     </DashboardStyled>
   );
 };
