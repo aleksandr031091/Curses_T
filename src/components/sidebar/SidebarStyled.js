@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const ModalStyled = styled.div`
+const SidebarStyled = styled.aside`
   background-color: red;
   width: 400px;
 `;
 
-export default ModalStyled;
+export default SidebarStyled;

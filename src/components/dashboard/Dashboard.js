@@ -1,20 +1,33 @@
 import curses from "../curses.json";
-import { useEffect, useState } from "react";
-import Modal from "../modal/Modal";
+import { createContext, useEffect, useState } from "react";
+
 import Form from "../form/Form";
 
 import useModal from "../../hooks/useModal";
 import DashboardStyled from "./DashboardStyled";
 
 import CurseModules from "./curse_modules/CurseModules";
+import Sidebar from "../sidebar/Sidebar";
 
 const Deshboard = () => {
-  const [isOpenModal, setOpenModal] = useModal();
+  const [stateBar, setStateBar] = useState(false);
 
-  const onHandleClick = (e) => {
-    console.log(e.target);
-    setOpenModal();
+  const [courseState, setCourseState] = useState({});
+  const [idxModuleState, setIdxModuleState] = useState(0);
+
+  const onHandleClickCard = (id) => (e) => {
+    const cours = curses.filter((cours) => cours.id === id);
+    // console.log(e.target);
+    setCourseState(cours);
+
+    setStateBar(true);
   };
+
+  const onHandleClickModule = (idx) => {
+    setIdxModuleState(idx);
+  };
+
+  // ======================Search content======================
 
   const [search, setSearch] = useState("");
   const [searcTermhResult, setSearcTermhResult] = useState([]);
@@ -27,38 +40,23 @@ const Deshboard = () => {
     setSearch(value);
 
     if (value !== "") {
-      // const newCurserList = curses.reduce((acc, curses) => {
-      //   curses.title.toLowerCase().includes(value.toLowerCase()) &&
-      //     acc.push(curses);
-
-      //   if (acc.length === 0) {
-      //     curses.module.forEach((m) => {
-      //       if (m.title.toLowerCase().includes(value.toLowerCase())) {
-      //         // console.log(m.title);
-      //         const obj = JSON.parse(JSON.stringify(curses));
-      //         obj.module.filter((el) => el.title === m.title);
-      //         console.log(obj);
-      //         acc.push();
-      //       }
-      //     });
-      //   }
-      //   // console.log(acc);
-      //   return acc;
-      // }, []);
-      const newArrCurses = curses.filter(
-        (curse) =>
+      const newArrCurses = curses.filter((curse) => {
+        return (
           curse.title.toLowerCase().includes(value.toLowerCase()) ||
           curse.module.some(({ title }) =>
             title.toLowerCase().includes(value.toLowerCase())
           )
-      );
+        );
+      });
       setSearcTermhResult(newArrCurses);
     } else {
       setSearcTermhResult(curses);
     }
   };
+  // ======================Search content======================
 
   return (
+    // <ContextCard.Provider>
     <DashboardStyled>
       <Form term={search} searchKeyword={onHandleSearch} />
 
@@ -72,10 +70,14 @@ const Deshboard = () => {
                 <li
                   key={curse.id}
                   className="curses_card"
-                  onClick={onHandleClick}
+                  onClick={onHandleClickCard(curse.id)}
                 >
                   <p className="curse_title">{curse.title}</p>
-                  <CurseModules modules={curse.module} status="in progress" />
+                  <CurseModules
+                    modules={curse.module}
+                    status="in progress"
+                    onHandleClickModule={onHandleClickModule}
+                  />
                 </li>
               ))}
             </ul>
@@ -88,35 +90,10 @@ const Deshboard = () => {
               {searcTermhResult.map((curse) => (
                 <li key={curse.id} className="curses_card">
                   <p className="curse_title">{curse.title}</p>
-                  <CurseModules modules={curse.module} status="submitted" />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Submitted</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
-                  <CurseModules modules={curse.module} status="submitted" />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
                   <CurseModules
                     modules={curse.module}
-                    status="ready to submit to peer review"
+                    status="submitted"
+                    onHandleClickModule={onHandleClickModule}
                   />
                 </li>
               ))}
@@ -133,6 +110,7 @@ const Deshboard = () => {
                   <CurseModules
                     modules={curse.module}
                     status="ready to submit to peer review"
+                    onHandleClickModule={onHandleClickModule}
                   />
                 </li>
               ))}
@@ -140,7 +118,7 @@ const Deshboard = () => {
           </div>
 
           <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
+            <h2 className="block_title">Complete</h2>
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
@@ -148,36 +126,18 @@ const Deshboard = () => {
                   <p className="curse_title">{curse.title}</p>
                   <CurseModules
                     modules={curse.module}
-                    status="ready to submit to peer review"
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
-
-            <ul className="block_list">
-              {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
-                  <p className="curse_title">{curse.title}</p>
-                  <CurseModules
-                    modules={curse.module}
-                    status="ready to submit to peer review"
+                    status="complete"
+                    onHandleClickModule={onHandleClickModule}
                   />
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        {isOpenModal && (
-          <Modal handleCloseModal={setOpenModal}>
-            <p>Good</p>
-          </Modal>
-        )}
+        {stateBar && <Sidebar onOpenBar={setStateBar} />}
       </div>
     </DashboardStyled>
+    // </ContextCard.Provider>
   );
 };
 

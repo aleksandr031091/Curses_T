@@ -1,9 +1,9 @@
 import { Children, useState } from "react";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import ModalStyled from "./ModalStyled";
+import SidebarStyled from "./SidebarStyled";
 
-const Modal = ({ children, handleCloseModal }) => {
-  const onBtnClose = () => handleCloseModal();
+const Sidebar = ({ onOpenBar }) => {
+  const onBtnClose = () => onOpenBar(false);
 
   return (
     <SwitchTransition>
@@ -13,17 +13,16 @@ const Modal = ({ children, handleCloseModal }) => {
           node.addEventListener("transitionend", done, false)
         }
       >
-        <ModalStyled>
+        <SidebarStyled>
           <div className="modal_wrapper">
             <button className="Btn" onClick={onBtnClose}>
               Close
             </button>
-            {children}
           </div>
-        </ModalStyled>
+        </SidebarStyled>
       </CSSTransition>
     </SwitchTransition>
   );
 };
 
-export default Modal;
+export default Sidebar;

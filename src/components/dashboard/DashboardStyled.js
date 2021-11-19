@@ -34,6 +34,9 @@ const DashboardStyled = styled.div`
 
     overflow-y: auto;
   }
+  /* .block_list:focus {
+    border: 2px solid red;
+  } */
 
   .block_title {
     font-size: 17px;
