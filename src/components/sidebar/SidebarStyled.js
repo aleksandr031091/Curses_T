@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SidebarStyled = styled.aside`
-  background-color: red;
+  background-color: #3b838d;
   width: 400px;
 `;
 

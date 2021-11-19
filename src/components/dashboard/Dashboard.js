@@ -13,10 +13,10 @@ const Deshboard = () => {
   const [stateBar, setStateBar] = useState(false);
 
   const [courseState, setCourseState] = useState({});
-  const [idxModuleState, setIdxModuleState] = useState(0);
+  const [idxModuleState, setIdxModuleState] = useState(null);
 
   const onHandleClickCard = (id) => (e) => {
-    const cours = curses.filter((cours) => cours.id === id);
+    const cours = curses.find((cours) => cours.id === id);
     // console.log(e.target);
     setCourseState(cours);
 
@@ -88,7 +88,11 @@ const Deshboard = () => {
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
+                <li
+                  key={curse.id}
+                  className="curses_card"
+                  onClick={onHandleClickCard(curse.id)}
+                >
                   <p className="curse_title">{curse.title}</p>
                   <CurseModules
                     modules={curse.module}
@@ -105,7 +109,11 @@ const Deshboard = () => {
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
+                <li
+                  key={curse.id}
+                  className="curses_card"
+                  onClick={onHandleClickCard(curse.id)}
+                >
                   <p className="curse_title">{curse.title}</p>
                   <CurseModules
                     modules={curse.module}
@@ -122,7 +130,11 @@ const Deshboard = () => {
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
-                <li key={curse.id} className="curses_card">
+                <li
+                  key={curse.id}
+                  className="curses_card"
+                  onClick={onHandleClickCard(curse.id)}
+                >
                   <p className="curse_title">{curse.title}</p>
                   <CurseModules
                     modules={curse.module}
@@ -134,7 +146,14 @@ const Deshboard = () => {
             </ul>
           </div>
         </div>
-        {stateBar && <Sidebar onOpenBar={setStateBar} />}
+        {stateBar && (
+          <Sidebar
+            onOpenBar={setStateBar}
+            cours={courseState}
+            idxModule={idxModuleState}
+            onHandleClickModule={onHandleClickModule}
+          />
+        )}
       </div>
     </DashboardStyled>
     // </ContextCard.Provider>
