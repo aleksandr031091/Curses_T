@@ -2,26 +2,29 @@ import styled from "styled-components";
 
 const DashboardStyled = styled.div`
   /* display: flex; */
-  /* height: calc(100vh - 140px); */
-
+  height: 100vh;
+  /* padding: 0 0 20px 0; */
   background-color: #c9fff3;
   box-shadow: 4px 4px 47px 0px rgba(34, 60, 80, 0.2);
 
   .content_board {
     display: flex;
-    height: 600px;
+    /* height: 100vh; */
+    height: calc(100% - 41px);
   }
   .block_wrapper {
     display: flex;
-    padding: 0 10px 0 10px;
+    padding: 10px 10px 0 10px;
     width: 100%;
-    /* height: calc(100vh - 141px); */
+    /* height: calc(100% - 50px); */
+
     /* height: 100%; */
     overflow-x: auto;
     overflow-y: hidden;
   }
 
   .block_curses {
+    /* height: calc(100% - 50px); */
   }
 
   .block_curses:not(:last-child) {
@@ -30,7 +33,7 @@ const DashboardStyled = styled.div`
 
   .block_list {
     width: 300px;
-    height: calc(100% - 30px);
+    height: calc(100% - 50px);
 
     overflow-y: auto;
   }

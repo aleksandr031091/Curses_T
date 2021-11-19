@@ -1,6 +1,6 @@
 import FormStyled from "./FormStyled";
 
-const Form = ({ term, searchKeyword }) => {
+const Form = ({ term, searchKeyword, totalModules }) => {
   const onHandleChange = (e) => {
     const value = e.target.value;
 
@@ -20,7 +20,7 @@ const Form = ({ term, searchKeyword }) => {
 
       <div className="total_wrapper">
         <p>total curses 3</p>
-        <p>total nodule 9</p>
+        <p>total nodule {totalModules}</p>
       </div>
     </FormStyled>
   );

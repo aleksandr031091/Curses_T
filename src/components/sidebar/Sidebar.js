@@ -1,10 +1,10 @@
 import SidebarStyled from "./SidebarStyled";
-import { nanoid } from "nanoid";
+import sprite from "../../image/sprite.svg";
 
-const Sidebar = ({ onOpenBar, cours, idxModule, onHandleClickModule }) => {
+const Sidebar = ({ onOpenBar, course, idxModule, onHandleClickModule }) => {
   const onBtnClose = () => onOpenBar(false);
 
-  const onHandleClick = (idx) => () => {
+  const onHandleClick = (idx) => (e) => {
     onHandleClickModule(idx);
   };
 
@@ -12,17 +12,24 @@ const Sidebar = ({ onOpenBar, cours, idxModule, onHandleClickModule }) => {
     <SidebarStyled>
       <div className="modal_wrapper">
         <button className="Btn" onClick={onBtnClose}>
-          Close
+          <svg className="FooterIcon" width="18" height="18">
+            <use href={sprite + "#icon-close"}></use>
+          </svg>
         </button>
-        <h3>{cours.title}</h3>
+        <p className="curse_title">{course.title}</p>
         <ul>
-          {cours.module.map((module) => (
+          {course.module.map((module) => (
             <li
-              className="module_list_item"
-              key={nanoid()}
-              onClick={onHandleClick(cours.module.indexOf(module))}
+              className={
+                course.module.indexOf(module) === idxModule
+                  ? "focus-module_list_item module_list_item"
+                  : "module_list_item"
+              }
+              key={course.module.indexOf(module)}
+              onClick={onHandleClick(course.module.indexOf(module))}
             >
               <p className="module_name">{module.title}</p>
+              <p className="module_status">{module.status}</p>
             </li>
           ))}
         </ul>

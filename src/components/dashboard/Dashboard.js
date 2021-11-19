@@ -1,9 +1,8 @@
 import curses from "../curses.json";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 import Form from "../form/Form";
 
-import useModal from "../../hooks/useModal";
 import DashboardStyled from "./DashboardStyled";
 
 import CurseModules from "./curse_modules/CurseModules";
@@ -15,11 +14,15 @@ const Deshboard = () => {
   const [courseState, setCourseState] = useState({});
   const [idxModuleState, setIdxModuleState] = useState(null);
 
+  // const ref = useRef();
+  const [count, setCount] = useState();
+
   const onHandleClickCard = (id) => (e) => {
     const cours = curses.find((cours) => cours.id === id);
     // console.log(e.target);
     setCourseState(cours);
-
+    // console.log(ref.current);
+    // ref.current.style.color = "blue";
     setStateBar(true);
   };
 
@@ -55,15 +58,37 @@ const Deshboard = () => {
   };
   // ======================Search content======================
 
+  const showTotalMoules = (string) => {
+    let totalModules = 0;
+    let totalBlockModules = 0;
+    curses.forEach((course) => {
+      totalModules += course.module.length;
+      totalBlockModules += course.module.filter(
+        (el) => el.status === string
+      ).length;
+    });
+    if (!string) {
+      return totalModules;
+    }
+    return totalBlockModules;
+  };
+
   return (
     // <ContextCard.Provider>
     <DashboardStyled>
-      <Form term={search} searchKeyword={onHandleSearch} />
+      <Form
+        term={search}
+        searchKeyword={onHandleSearch}
+        totalModules={showTotalMoules()}
+      />
 
       <div className="content_board">
         <div className="block_wrapper">
           <div className="block_curses">
-            <h2 className="block_title">In progress</h2>
+            <h2 className="block_title">
+              In progress
+              {` (${showTotalMoules("in progress")})`}
+            </h2>
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
@@ -84,7 +109,10 @@ const Deshboard = () => {
           </div>
 
           <div className="block_curses">
-            <h2 className="block_title">Submitted</h2>
+            <h2 className="block_title">
+              Submitted
+              {` (${showTotalMoules("submitted")})`}
+            </h2>
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
@@ -105,7 +133,10 @@ const Deshboard = () => {
           </div>
 
           <div className="block_curses">
-            <h2 className="block_title">Ready to submit to peer review</h2>
+            <h2 className="block_title">
+              Ready to submit to peer review
+              {` (${showTotalMoules("ready to submit to peer review")})`}
+            </h2>
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
@@ -126,7 +157,10 @@ const Deshboard = () => {
           </div>
 
           <div className="block_curses">
-            <h2 className="block_title">Complete</h2>
+            <h2 className="block_title">
+              Complete
+              {` (${showTotalMoules("complete")})`}
+            </h2>
 
             <ul className="block_list">
               {searcTermhResult.map((curse) => (
@@ -149,7 +183,7 @@ const Deshboard = () => {
         {stateBar && (
           <Sidebar
             onOpenBar={setStateBar}
-            cours={courseState}
+            course={courseState}
             idxModule={idxModuleState}
             onHandleClickModule={onHandleClickModule}
           />

@@ -1,5 +1,3 @@
-import { nanoid } from "nanoid";
-
 const CurseModules = ({ modules, status, onHandleClickModule }) => {
   const arrModules = modules.filter((el) => el.status === status);
 
@@ -7,12 +5,14 @@ const CurseModules = ({ modules, status, onHandleClickModule }) => {
     onHandleClickModule(idx);
   };
 
+  // console.log(modules);
+
   return (
     <ul className="module_list">
       {arrModules.map((module) => (
         <li
           className="module_list_item"
-          key={nanoid()}
+          key={modules.indexOf(module)}
           onClick={onHandleClick(modules.indexOf(module))}
         >
           <p className="module_name">{module.title}</p>
