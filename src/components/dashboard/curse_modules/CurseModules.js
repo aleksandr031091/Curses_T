@@ -1,21 +1,35 @@
-const CurseModules = ({ modules, status, onHandleClickModule }) => {
+import Skeleton from "react-loading-skeleton";
+
+const CurseModules = ({
+  modules,
+  status,
+  onHandleClickModule,
+  idxModule,
+  load,
+}) => {
   const arrModules = modules.filter((el) => el.status === status);
 
   const onHandleClick = (idx) => () => {
     onHandleClickModule(idx);
   };
 
-  // console.log(modules);
-
   return (
     <ul className="module_list">
       {arrModules.map((module) => (
         <li
-          className="module_list_item"
+          className={
+            modules.indexOf(module) === idxModule
+              ? "focus-module_list_item module_list_item"
+              : "module_list_item"
+          }
           key={modules.indexOf(module)}
           onClick={onHandleClick(modules.indexOf(module))}
         >
-          <p className="module_name">{module.title}</p>
+          {!load ? (
+            <Skeleton width="150px" height="20px" />
+          ) : (
+            <p>{module.title}</p>
+          )}
         </li>
       ))}
     </ul>

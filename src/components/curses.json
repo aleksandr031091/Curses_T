@@ -21,14 +21,14 @@
     "id": "2",
     "title": "Aleksatdr test",
     "module": [
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "module", "status": "in progress" },
+      { "title": "module", "status": "in progress" },
+      { "title": "module", "status": "in progress" },
+      { "title": "module", "status": "submitted" },
+      { "title": "module", "status": "submitted" },
+      { "title": "module", "status": "submitted" },
+      { "title": "module", "status": "ready to submit to peer review" },
+      { "title": "module", "status": "ready to submit to peer review" },
       { "title": "ccccccc", "status": "complete" },
       { "title": "ccccccc", "status": "complete" }
     ]
@@ -37,32 +37,32 @@
     "id": "3",
     "title": "Aleksatdr",
     "module": [
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "complete" },
-      { "title": "new module", "status": "complete" }
+      { "title": "qweqwe", "status": "in progress" },
+      { "title": "qweqwe", "status": "in progress" },
+      { "title": "qweqwe", "status": "submitted" },
+      { "title": "qweqwe", "status": "submitted" },
+      { "title": "qweqwe", "status": "submitted" },
+      { "title": "qweqwe", "status": "ready to submit to peer review" },
+      { "title": "qweqwe", "status": "ready to submit to peer review" },
+      { "title": "qweqwe", "status": "ready to submit to peer review" },
+      { "title": "qweqwe", "status": "complete" },
+      { "title": "qweqwe", "status": "complete" }
     ]
   },
   {
     "id": "4",
     "title": "Aleksatdr",
     "module": [
-      { "title": "new", "status": "in progress" },
-      { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "new module", "status": "ready to submit to peer review" },
-      { "title": "ccccccc", "status": "complete" },
-      { "title": "ccccccc", "status": "complete" }
+      { "title": "cccccccbffff", "status": "in progress" },
+      { "title": "cccccccbffff", "status": "in progress" },
+      { "title": "cccccccbffff", "status": "submitted" },
+      { "title": "cccccccbffff", "status": "submitted" },
+      { "title": "cccccccbffff", "status": "submitted" },
+      { "title": "cccccccbffff", "status": "ready to submit to peer review" },
+      { "title": "cccccccbffff", "status": "ready to submit to peer review" },
+      { "title": "cccccccbffff", "status": "ready to submit to peer review" },
+      { "title": "cccccccbffff", "status": "complete" },
+      { "title": "cccccccbffff", "status": "complete" }
     ]
   },
   {
@@ -77,6 +77,38 @@
       { "title": "ppp", "status": "ready to submit to peer review" },
       { "title": "ppp", "status": "ready to submit to peer review" },
       { "title": "ppp", "status": "ready to submit to peer review" },
+      { "title": "ttttttttt", "status": "complete" },
+      { "title": "complll", "status": "complete" }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Aleksatdr",
+    "module": [
+      { "title": "complll", "status": "in progress" },
+      { "title": "complll", "status": "in progress" },
+      { "title": "n", "status": "submitted" },
+      { "title": "complll", "status": "submitted" },
+      { "title": "complll", "status": "submitted" },
+      { "title": "complll", "status": "ready to submit to peer review" },
+      { "title": "complll", "status": "ready to submit to peer review" },
+      { "title": "complll", "status": "ready to submit to peer review" },
+      { "title": "ttttttttt", "status": "complete" },
+      { "title": "complll", "status": "complete" }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Aleks",
+    "module": [
+      { "title": "zzzlll", "status": "in progress" },
+      { "title": "zzzlll", "status": "in progress" },
+      { "title": "zzz", "status": "submitted" },
+      { "title": "zzzlll", "status": "submitted" },
+      { "title": "zzzlll", "status": "submitted" },
+      { "title": "zzzlll", "status": "ready to submit to peer review" },
+      { "title": "zzzlll", "status": "ready to submit to peer review" },
+      { "title": "zzzlll", "status": "ready to submit to peer review" },
       { "title": "ttttttttt", "status": "complete" },
       { "title": "complll", "status": "complete" }
     ]
