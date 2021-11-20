@@ -26,7 +26,6 @@ const Deshboard = () => {
   const onHandleClickModule = (idx) => {
     setIdxModuleState(idx);
   };
-  // ====================== on click course ======================
 
   // ====================== Search content======================
   const [search, setSearch] = useState("");
@@ -57,7 +56,6 @@ const Deshboard = () => {
       setSearcTermhResult(curses);
     }
   };
-  // ====================== Search content======================
 
   // ====================== Total modules ======================
   const showTotalMoules = (string) => {
@@ -74,17 +72,15 @@ const Deshboard = () => {
     }
     return totalBlockModules;
   };
-  // ====================== Total modules ======================
 
-  // ====================== Sceleton ======================
+  // ====================== Sceleton example ======================
   const [load, setLoad] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
-    }, 500);
+    }, 3000);
   }, []);
-  // ====================== Sceleton ======================
 
   return (
     <DashboardStyled load={load}>

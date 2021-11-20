@@ -15,19 +15,6 @@ const HeaderStyled = styled.div`
       : "linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) 3"};
   box-shadow: 1px 4px 11px -5px #7c7c7c;
 
-  /* ============================== Sceleton ============================== */
-  .scelet_wrapper {
-    display: flex;
-    align-items: center;
-  }
-  .scelet_wrapper:not(:last-child) {
-    margin-right: 20px;
-  }
-  .sceleton_item {
-    margin-right: 5px;
-  }
-  /* ============================== Sceleton ============================== */
-
   .input_wrapper {
     position: relative;
   }
@@ -88,6 +75,18 @@ const HeaderStyled = styled.div`
   }
   .auto_complite_item:hover {
     background-color: #d7e7ff;
+  }
+
+  /* ============================== Sceleton ============================== */
+  .scelet_wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .scelet_wrapper:not(:last-child) {
+    margin-right: 20px;
+  }
+  .sceleton_item {
+    margin-right: 5px;
   }
 `;
 
