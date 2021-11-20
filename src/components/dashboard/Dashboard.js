@@ -1,11 +1,11 @@
 import curses from "../curses.json";
-import CurseModules from "./curse_modules/CurseModules";
 import { useEffect, useState } from "react";
-
 import Header from "../header_dashboard/Header";
 import Sidebar from "../sidebar/Sidebar";
+import BlockCourse from "./block_course/BlockCourse";
+
 import DashboardStyled from "./DashboardStyled";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const Deshboard = () => {
@@ -94,222 +94,71 @@ const Deshboard = () => {
 
         <div className="content_board">
           <div className="block_wrapper">
-            <div className="block_curses">
-              <h2 className="block_title">
-                {!load ? (
-                  <Skeleton width="150px" />
-                ) : (
-                  `In progress (${showTotalMoules("in progress")})`
-                )}
-              </h2>
-              <ul className="block_list">
-                {searcTermhResult.map((curse) => (
-                  <li
-                    key={curse.id}
-                    className={
-                      curse.id === courseState.id
-                        ? "focus-curses_card curses_card"
-                        : "curses_card"
-                    }
-                    onClick={onHandleClickCard(curse.id)}
-                  >
-                    {!load ? (
-                      <Skeleton className="curse_title" width="200px" />
-                    ) : (
-                      <p className="curse_title">{curse.title}</p>
-                    )}
-                    <CurseModules
-                      modules={curse.module}
-                      status="in progress"
-                      idxModule={idxModuleState}
-                      onHandleClickModule={onHandleClickModule}
-                      load={load}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <BlockCourse
+              load={load}
+              showTotalMoules={showTotalMoules}
+              searcTermhResult={searcTermhResult}
+              courseState={courseState}
+              onHandleClickCard={onHandleClickCard}
+              idxModuleState={idxModuleState}
+              onHandleClickModule={onHandleClickModule}
+              blockName="in progress"
+            />
 
-            <div className="block_curses">
-              <h2 className="block_title">
-                {!load ? (
-                  <Skeleton width="150px" />
-                ) : (
-                  `Submitted (${showTotalMoules("submitted")})`
-                )}
-              </h2>
-              <ul className="block_list">
-                {searcTermhResult.map((curse) => (
-                  <li
-                    key={curse.id}
-                    className={
-                      curse.id === courseState.id
-                        ? "focus-curses_card curses_card"
-                        : "curses_card"
-                    }
-                    onClick={onHandleClickCard(curse.id)}
-                  >
-                    {!load ? (
-                      <Skeleton className="curse_title" width="200px" />
-                    ) : (
-                      <p className="curse_title">{curse.title}</p>
-                    )}
-                    <CurseModules
-                      modules={curse.module}
-                      status="submitted"
-                      idxModule={idxModuleState}
-                      onHandleClickModule={onHandleClickModule}
-                      load={load}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <BlockCourse
+              load={load}
+              showTotalMoules={showTotalMoules}
+              searcTermhResult={searcTermhResult}
+              courseState={courseState}
+              onHandleClickCard={onHandleClickCard}
+              idxModuleState={idxModuleState}
+              onHandleClickModule={onHandleClickModule}
+              blockName="submitted"
+            />
 
-            <div className="block_curses">
-              <h2 className="block_title">
-                {!load ? (
-                  <Skeleton width="150px" />
-                ) : (
-                  `Ready to submit to peer review
-                   (${showTotalMoules("ready to submit to peer review")})`
-                )}
-              </h2>
-              <ul className="block_list">
-                {searcTermhResult.map((curse) => (
-                  <li
-                    key={curse.id}
-                    className={
-                      curse.id === courseState.id
-                        ? "focus-curses_card curses_card"
-                        : "curses_card"
-                    }
-                    onClick={onHandleClickCard(curse.id)}
-                  >
-                    {!load ? (
-                      <Skeleton className="curse_title" width="200px" />
-                    ) : (
-                      <p className="curse_title">{curse.title}</p>
-                    )}
-                    <CurseModules
-                      modules={curse.module}
-                      status="ready to submit to peer review"
-                      idxModule={idxModuleState}
-                      onHandleClickModule={onHandleClickModule}
-                      load={load}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <BlockCourse
+              load={load}
+              showTotalMoules={showTotalMoules}
+              searcTermhResult={searcTermhResult}
+              courseState={courseState}
+              onHandleClickCard={onHandleClickCard}
+              idxModuleState={idxModuleState}
+              onHandleClickModule={onHandleClickModule}
+              blockName="ready to submit to peer review"
+            />
 
-            <div className="block_curses">
-              <h2 className="block_title">
-                {!load ? (
-                  <Skeleton width="150px" />
-                ) : (
-                  `Complete (${showTotalMoules("complete")})`
-                )}
-              </h2>
-              <ul className="block_list">
-                {searcTermhResult.map((curse) => (
-                  <li
-                    key={curse.id}
-                    className={
-                      curse.id === courseState.id
-                        ? "focus-curses_card curses_card"
-                        : "curses_card"
-                    }
-                    onClick={onHandleClickCard(curse.id)}
-                  >
-                    {!load ? (
-                      <Skeleton className="curse_title" width="200px" />
-                    ) : (
-                      <p className="curse_title">{curse.title}</p>
-                    )}
-                    <CurseModules
-                      modules={curse.module}
-                      status="complete"
-                      idxModule={idxModuleState}
-                      onHandleClickModule={onHandleClickModule}
-                      load={load}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <BlockCourse
+              load={load}
+              showTotalMoules={showTotalMoules}
+              searcTermhResult={searcTermhResult}
+              courseState={courseState}
+              onHandleClickCard={onHandleClickCard}
+              idxModuleState={idxModuleState}
+              onHandleClickModule={onHandleClickModule}
+              blockName="complete"
+            />
 
-            <div className="block_curses">
-              <h2 className="block_title">
-                {!load ? (
-                  <Skeleton width="150px" />
-                ) : (
-                  `Complete (${showTotalMoules("complete")})`
-                )}
-              </h2>
-              <ul className="block_list">
-                {searcTermhResult.map((curse) => (
-                  <li
-                    key={curse.id}
-                    className={
-                      curse.id === courseState.id
-                        ? "focus-curses_card curses_card"
-                        : "curses_card"
-                    }
-                    onClick={onHandleClickCard(curse.id)}
-                  >
-                    {!load ? (
-                      <Skeleton className="curse_title" width="200px" />
-                    ) : (
-                      <p className="curse_title">{curse.title}</p>
-                    )}
-                    <CurseModules
-                      modules={curse.module}
-                      status="complete"
-                      idxModule={idxModuleState}
-                      onHandleClickModule={onHandleClickModule}
-                      load={load}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <BlockCourse
+              load={load}
+              showTotalMoules={showTotalMoules}
+              searcTermhResult={searcTermhResult}
+              courseState={courseState}
+              onHandleClickCard={onHandleClickCard}
+              idxModuleState={idxModuleState}
+              onHandleClickModule={onHandleClickModule}
+              blockName="complete"
+            />
 
-            <div className="block_curses">
-              <h2 className="block_title">
-                {!load ? (
-                  <Skeleton width="150px" />
-                ) : (
-                  `Complete (${showTotalMoules("complete")})`
-                )}
-              </h2>
-              <ul className="block_list">
-                {searcTermhResult.map((curse) => (
-                  <li
-                    key={curse.id}
-                    className={
-                      curse.id === courseState.id
-                        ? "focus-curses_card curses_card"
-                        : "curses_card"
-                    }
-                    onClick={onHandleClickCard(curse.id)}
-                  >
-                    {!load ? (
-                      <Skeleton className="curse_title" width="200px" />
-                    ) : (
-                      <p className="curse_title">{curse.title}</p>
-                    )}
-                    <CurseModules
-                      modules={curse.module}
-                      status="complete"
-                      idxModule={idxModuleState}
-                      onHandleClickModule={onHandleClickModule}
-                      load={load}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <BlockCourse
+              load={load}
+              showTotalMoules={showTotalMoules}
+              searcTermhResult={searcTermhResult}
+              courseState={courseState}
+              onHandleClickCard={onHandleClickCard}
+              idxModuleState={idxModuleState}
+              onHandleClickModule={onHandleClickModule}
+              blockName="complete"
+            />
           </div>
           {stateBar && (
             <Sidebar
