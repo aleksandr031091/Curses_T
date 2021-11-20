@@ -1,4 +1,5 @@
 import curses from "../curses.json";
+import courseModuleStatus from "../course_module_status.json";
 import { useEffect, useState } from "react";
 import Header from "../header_dashboard/Header";
 import Sidebar from "../sidebar/Sidebar";
@@ -17,6 +18,7 @@ const Deshboard = () => {
 
   const onHandleClickCard = (id) => (e) => {
     const cours = curses.find((cours) => cours.id === id);
+
     setCourseState(cours);
     setStateBar(true);
   };
@@ -29,8 +31,10 @@ const Deshboard = () => {
   // ====================== Search content======================
   const [search, setSearch] = useState("");
   const [searcTermhResult, setSearcTermhResult] = useState([]);
+  const [totalCourseHeader, setTotalCourseHeader] = useState([]);
 
   useEffect(() => {
+    setTotalCourseHeader(curses);
     setSearcTermhResult(curses);
   }, []);
 
@@ -46,8 +50,10 @@ const Deshboard = () => {
           )
         );
       });
+      setTotalCourseHeader(newArrCurses);
       setSearcTermhResult(newArrCurses);
     } else {
+      setTotalCourseHeader(curses);
       setSearcTermhResult(curses);
     }
   };
@@ -81,14 +87,13 @@ const Deshboard = () => {
   // ====================== Sceleton ======================
 
   return (
-    // <ContextCard.Provider>
     <DashboardStyled load={load}>
       <SkeletonTheme baseColor="#8d8d8d" highlightColor="#cecece">
         <Header
           term={search}
           searchKeyword={onHandleSearch}
           totalModules={showTotalMoules()}
-          totalCurses={curses.length}
+          totalCurses={totalCourseHeader.length}
           load={load}
         />
 
@@ -102,7 +107,7 @@ const Deshboard = () => {
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
               onHandleClickModule={onHandleClickModule}
-              blockName="in progress"
+              blockName={courseModuleStatus.inProgres}
             />
 
             <BlockCourse
@@ -113,7 +118,7 @@ const Deshboard = () => {
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
               onHandleClickModule={onHandleClickModule}
-              blockName="submitted"
+              blockName={courseModuleStatus.submitted}
             />
 
             <BlockCourse
@@ -124,7 +129,7 @@ const Deshboard = () => {
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
               onHandleClickModule={onHandleClickModule}
-              blockName="ready to submit to peer review"
+              blockName={courseModuleStatus.review}
             />
 
             <BlockCourse
@@ -135,7 +140,7 @@ const Deshboard = () => {
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
               onHandleClickModule={onHandleClickModule}
-              blockName="complete"
+              blockName={courseModuleStatus.complete}
             />
 
             <BlockCourse
@@ -146,7 +151,7 @@ const Deshboard = () => {
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
               onHandleClickModule={onHandleClickModule}
-              blockName="complete"
+              blockName={courseModuleStatus.complete}
             />
 
             <BlockCourse
@@ -157,7 +162,7 @@ const Deshboard = () => {
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
               onHandleClickModule={onHandleClickModule}
-              blockName="complete"
+              blockName={courseModuleStatus.complete}
             />
           </div>
           {stateBar && (
@@ -172,7 +177,6 @@ const Deshboard = () => {
         </div>
       </SkeletonTheme>
     </DashboardStyled>
-    // </ContextCard.Provider>
   );
 };
 

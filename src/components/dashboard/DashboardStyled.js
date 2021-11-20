@@ -5,11 +5,6 @@ const DashboardStyled = styled.div`
   background-color: ${({ load }) => (!load ? "#ebebeb" : "#fff8f2")};
 
   /* =====================module style===================== */
-  .curse_title {
-    margin-bottom: 10px;
-  }
-  .module_list {
-  }
   .module_list_item {
     padding: 10px;
     border-left: 3px solid ${({ load }) => (!load ? "#8b8b8b" : "#000000")};
@@ -46,8 +41,15 @@ const DashboardStyled = styled.div`
   }
   .block_title {
     font-size: 17px;
-    margin-bottom: 10px;
+    margin-right: 10px;
   }
+  .title_item {
+    font-weight: 700;
+    font-size: 18px;
+    color: #0004ff;
+  }
+
+  /* ======================= Curses_card ======================= */
   .curses_card {
     padding: 10px;
     background-color: ${({ load }) => (!load ? "#dddddd" : "#fff")};
@@ -58,6 +60,47 @@ const DashboardStyled = styled.div`
   }
   .focus-curses_card {
     border: 1px solid ${({ load }) => (!load ? "#525252" : "#2600ff")};
+  }
+  .block_title_wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .card_head_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .curse_title {
+    margin-right: 8px;
+  }
+  .course_autor {
+    margin-right: 5px;
+    padding: 3px;
+    font-size: 15px;
+
+    background-color: #ffdc41dc;
+    border-radius: 8px;
+    text-transform: capitalize;
+  }
+  .course_active {
+    margin-right: 5px;
+    padding: 3px;
+    background-color: #49d449e2;
+    border-radius: 8px;
+  }
+  .course_priority {
+    margin-right: 10px;
+    padding: 3px;
+    background-color: #ff7057;
+    border-radius: 8px;
+  }
+  .course_description {
+    padding: 2px;
+    font-size: 12px;
+    color: #494949;
+    background-color: #fffcf7;
   }
 `;
 

@@ -1,6 +1,7 @@
 import Skeleton from "react-loading-skeleton";
 import SidebarStyled from "./SidebarStyled";
 import sprite from "../../image/sprite.svg";
+import { useEffect, useRef } from "react";
 
 const Sidebar = ({
   onOpenBar,
@@ -14,6 +15,12 @@ const Sidebar = ({
   const onHandleClick = (idx) => () => {
     onHandleClickModule(idx);
   };
+
+  const moduleRef = useRef();
+
+  useEffect(() => {
+    moduleRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, []);
 
   return (
     <SidebarStyled>
@@ -45,6 +52,7 @@ const Sidebar = ({
             </li>
           ) : (
             <li
+              ref={moduleRef}
               className={
                 course.module.indexOf(module) === idxModule
                   ? "focus-sidebar_list_item sidebar_list_item"
