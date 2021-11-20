@@ -8,10 +8,14 @@
     "description": "qweqweqwe qweqwe qwe qweqweqwe qweqwe qweqweqweqwe qweqwe qweqweqweqwe qweqwe qweqweqweqwe qweqwe qweqweqweqwe qweqwe qwe",
     "module": [
       { "title": "new module", "status": "in progress" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
-      { "title": "new module", "status": "submitted" },
       { "title": "new module", "status": "ready to submit to peer review" },
+      { "title": "zzzzzzzzzzzz", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+      { "title": "zzzzzzzzzzzz", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+      { "title": "jjjjjjsdcsdjj", "status": "ready to submit to peer review" },
       { "title": "commmppp", "status": "complete" },
       { "title": "commmppp", "status": "complete" }
     ]
@@ -19,7 +23,6 @@
   {
     "id": "2",
     "title": "Aleksatdr test",
-    "autor": "ivanov ivan",
     "priority": "high priority",
     "active": "active",
     "description": "qweqweqwe qweqwe qwe qweqweqwe qweqwe qweqweqweqwe qweqwe qweqweqweqwe qweqwe qweqweqweqwe qweqwe qweqweqweqwe qweqwe qwe",
@@ -37,7 +40,7 @@
     ]
   },
   {
-    "id": "7",
+    "id": "9",
     "title": "Aleks",
     "autor": "",
     "priority": "",
@@ -49,6 +52,11 @@
       { "title": "zzz", "status": "submitted" },
       { "title": "zzzlll", "status": "submitted" },
       { "title": "zzzlll", "status": "submitted" },
+      { "title": "zzz", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
       { "title": "zzzlll", "status": "ready to submit to peer review" },
       { "title": "zzzlll", "status": "ready to submit to peer review" },
       { "title": "zzzlll", "status": "ready to submit to peer review" },
@@ -79,6 +87,8 @@
   {
     "id": "4",
     "title": "Aleksatdr",
+    "autor": "ivanov ivan",
+    "priority": "high priority",
     "module": [
       { "title": "cccccccbffff", "status": "in progress" },
       { "title": "cccccccbffff", "status": "in progress" },
@@ -95,6 +105,9 @@
   {
     "id": "5",
     "title": "Aleksatdr",
+    "autor": "ivanov ivan",
+    "priority": "high priority",
+    "active": "no active",
     "module": [
       { "title": "ppp", "status": "in progress" },
       { "title": "ppp", "status": "in progress" },
@@ -113,7 +126,7 @@
     "title": "Aleksatdr",
     "autor": "ivanov ivan",
     "priority": "high priority",
-    "active": "active",
+    "active": "no active",
     "description": "qweqweqweqweqweqwe qweqwe qwe",
     "module": [
       { "title": "complll", "status": "in progress" },
@@ -143,17 +156,89 @@
       { "title": "jjjjjjjj", "status": "submitted" },
       { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
       { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+
+      { "title": "zzz", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+
+      { "title": "zzz", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "submitted" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
+      { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
       { "title": "jjjjjjjj", "status": "ready to submit to peer review" },
       { "title": "h", "status": "complete" },
       { "title": "eeee", "status": "complete" }
     ]
   },
   {
-    "id": "7",
+    "id": "8",
     "title": "Aleks",
     "autor": "",
     "priority": "",
-    "active": "",
+    "active": "active",
+    "description": "",
+    "module": [
+      { "title": "yyyyyy", "status": "in progress" },
+      { "title": "yyyyyy", "status": "in progress" },
+      { "title": "yy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "y", "status": "complete" },
+      { "title": "y", "status": "complete" }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Aleks",
+    "autor": "",
+    "priority": "",
+    "active": "active",
+    "description": "",
+    "module": [
+      { "title": "yyyyyy", "status": "in progress" },
+      { "title": "yyyyyy", "status": "in progress" },
+      { "title": "yy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "y", "status": "complete" },
+      { "title": "y", "status": "complete" }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Aleks",
+    "autor": "",
+    "priority": "",
+    "active": "active",
+    "description": "",
+    "module": [
+      { "title": "yyyyyy", "status": "in progress" },
+      { "title": "yyyyyy", "status": "in progress" },
+      { "title": "yy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "submitted" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "yyyyyy", "status": "ready to submit to peer review" },
+      { "title": "y", "status": "complete" },
+      { "title": "y", "status": "complete" }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Aleks",
+    "autor": "",
+    "priority": "",
+    "active": "active",
     "description": "",
     "module": [
       { "title": "yyyyyy", "status": "in progress" },

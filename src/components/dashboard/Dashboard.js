@@ -82,7 +82,7 @@ const Deshboard = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
-    }, 3000);
+    }, 500);
   }, []);
   // ====================== Sceleton ======================
 
@@ -94,6 +94,7 @@ const Deshboard = () => {
           searchKeyword={onHandleSearch}
           totalModules={showTotalMoules()}
           totalCurses={totalCourseHeader.length}
+          searchResult={searcTermhResult}
           load={load}
         />
 
@@ -102,7 +103,7 @@ const Deshboard = () => {
             <BlockCourse
               load={load}
               showTotalMoules={showTotalMoules}
-              searcTermhResult={searcTermhResult}
+              searchResult={searcTermhResult}
               courseState={courseState}
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
@@ -113,7 +114,7 @@ const Deshboard = () => {
             <BlockCourse
               load={load}
               showTotalMoules={showTotalMoules}
-              searcTermhResult={searcTermhResult}
+              searchResult={searcTermhResult}
               courseState={courseState}
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
@@ -124,7 +125,7 @@ const Deshboard = () => {
             <BlockCourse
               load={load}
               showTotalMoules={showTotalMoules}
-              searcTermhResult={searcTermhResult}
+              searchResult={searcTermhResult}
               courseState={courseState}
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
@@ -135,7 +136,7 @@ const Deshboard = () => {
             <BlockCourse
               load={load}
               showTotalMoules={showTotalMoules}
-              searcTermhResult={searcTermhResult}
+              searchResult={searcTermhResult}
               courseState={courseState}
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
@@ -146,7 +147,7 @@ const Deshboard = () => {
             <BlockCourse
               load={load}
               showTotalMoules={showTotalMoules}
-              searcTermhResult={searcTermhResult}
+              searchResult={searcTermhResult}
               courseState={courseState}
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}
@@ -157,7 +158,7 @@ const Deshboard = () => {
             <BlockCourse
               load={load}
               showTotalMoules={showTotalMoules}
-              searcTermhResult={searcTermhResult}
+              searchResult={searcTermhResult}
               courseState={courseState}
               onHandleClickCard={onHandleClickCard}
               idxModuleState={idxModuleState}

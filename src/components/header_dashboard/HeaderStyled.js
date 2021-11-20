@@ -68,6 +68,27 @@ const HeaderStyled = styled.div`
     background-color: #fb8817;
     border-radius: 50%;
   }
+
+  /* ============================== autocomplite ============================== */
+  .auto_complite {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    height: auto;
+    background-color: #fff3d0;
+    overflow-y: auto;
+  }
+  .auto_complite_item {
+    padding: 3px;
+    transition: 100ms;
+    cursor: pointer;
+  }
+  .auto_complite_item:not(:last-child) {
+    margin-bottom: 2px;
+  }
+  .auto_complite_item:hover {
+    background-color: #d7e7ff;
+  }
 `;
 
 export default HeaderStyled;

@@ -26,6 +26,7 @@ const SidebarStyled = styled.aside`
     padding: 10px;
     border: none;
     box-shadow: none;
+    cursor: pointer;
   }
 
   .focus-sidebar_list_item {

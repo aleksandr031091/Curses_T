@@ -4,7 +4,7 @@ import Skeleton from "react-loading-skeleton";
 const BlockCourse = ({
   load,
   showTotalMoules,
-  searcTermhResult,
+  searchResult,
   courseState,
   onHandleClickCard,
   idxModuleState,
@@ -28,7 +28,7 @@ const BlockCourse = ({
       )}
 
       <ul className="block_list">
-        {searcTermhResult.map((curse) => (
+        {searchResult.map((curse) => (
           <li
             key={curse.id}
             className={
@@ -39,7 +39,18 @@ const BlockCourse = ({
             onClick={onHandleClickCard(curse.id)}
           >
             {!load ? (
-              <Skeleton className="curse_title" width="200px" />
+              <div className="card_head_wrapper">
+                <Skeleton className="curse_title" width="200px" />
+                <Skeleton className="curse_title" width="60px" height="20px" />
+                <Skeleton className="curse_title" width="50px" height="20px" />
+                <Skeleton className="curse_title" width="80px" height="20px" />
+                <div className="sceleton_wrapper">
+                  <Skeleton width="250px" height="8px" />
+                  <Skeleton width="200px" height="8px" />
+                  <Skeleton width="180px" height="8px" />
+                  <Skeleton width="220px" height="8px" />
+                </div>
+              </div>
             ) : (
               <div className="card_head_wrapper">
                 {curse.title !== "" && (

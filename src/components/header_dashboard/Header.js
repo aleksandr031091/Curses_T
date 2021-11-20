@@ -1,12 +1,31 @@
+import { useState } from "react";
 import HeaderStyled from "./HeaderStyled";
 import sprite from "../../image/sprite.svg";
 import Skeleton from "react-loading-skeleton";
 
-const Header = ({ term, searchKeyword, totalModules, totalCurses, load }) => {
+const Header = ({
+  term,
+  searchKeyword,
+  totalModules,
+  totalCurses,
+  searchResult,
+  load,
+}) => {
+  const [isOpen, setIsopen] = useState(true);
+
   const onHandleChange = (e) => {
     const value = e.target.value;
 
     searchKeyword(value);
+  };
+
+  const onHandleClickComplete = (e) => {
+    searchKeyword(e.target.textContent);
+    setIsopen(false);
+  };
+
+  const onHendleClickInput = () => {
+    setIsopen(true);
   };
 
   return (
@@ -18,13 +37,30 @@ const Header = ({ term, searchKeyword, totalModules, totalCurses, load }) => {
         {!load ? (
           <Skeleton width="200px" height="20px" />
         ) : (
-          <input
-            type="text"
-            className="input_search"
-            onChange={onHandleChange}
-            value={term}
-            placeholder="Search"
-          />
+          <div>
+            <input
+              type="text"
+              className="input_search"
+              value={term}
+              onChange={onHandleChange}
+              onClick={onHendleClickInput}
+              placeholder="Search"
+            />
+
+            <ul className="auto_complite">
+              {isOpen &&
+                term &&
+                searchResult.map((course) => (
+                  <li
+                    className="auto_complite_item"
+                    key={course.id}
+                    onClick={onHandleClickComplete}
+                  >
+                    {course.title}
+                  </li>
+                ))}
+            </ul>
+          </div>
         )}
       </div>
 

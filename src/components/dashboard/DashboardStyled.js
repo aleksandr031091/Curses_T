@@ -9,6 +9,7 @@ const DashboardStyled = styled.div`
     padding: 10px;
     border-left: 3px solid ${({ load }) => (!load ? "#8b8b8b" : "#000000")};
     box-shadow: 0px 0px 2px 1px rgba(97, 97, 97, 0.308);
+    cursor: pointer;
   }
   .module_list_item:not(:last-child) {
     margin-bottom: 10px;
@@ -101,6 +102,9 @@ const DashboardStyled = styled.div`
     font-size: 12px;
     color: #494949;
     background-color: #fffcf7;
+  }
+  .sceleton_wrapper {
+    margin-top: 5px;
   }
 `;
 
