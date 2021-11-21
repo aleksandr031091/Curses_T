@@ -1,6 +1,6 @@
 # Dashboard_curses
 
-This project was bootstrapped with [Netlify](https://dashboard-curses.netlify.app).
+This project was bootstrapped with [Netlify](https://dashboard-courses.netlify.app).
 
 ## Installation
 
