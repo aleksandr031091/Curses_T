@@ -37,7 +37,9 @@ const DashboardStyled = styled.div`
   .block_list {
     padding: 20px;
     width: 300px;
-    height: calc(100% - 73px);
+    height: calc(100% - 53px);
+    border-right: 1px solid ${({ load }) => (!load ? "#474747" : "#ffa600")};
+
     overflow-y: auto;
   }
   .block_title {
